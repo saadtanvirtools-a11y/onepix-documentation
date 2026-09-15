@@ -736,3 +736,48 @@ input {
 .docs-sidebar a.nav-sub-link[href="featured-blog.html"] {
   display: none;
 }
+
+/* =====================================================
+   RESPONSIVE DOCUMENTATION MEDIA
+   Keep every documentation screenshot inside the article
+   viewport on tablets and mobile devices.
+   ===================================================== */
+
+.documentation-image,
+.documentation-article figure {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.documentation-image img,
+.documentation-article img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 767px) {
+  .article-container,
+  .documentation-article,
+  .documentation-image,
+  .documentation-article figure {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .documentation-image {
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+  }
+
+  .documentation-image img,
+  .documentation-article img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
